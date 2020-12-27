@@ -1,0 +1,205 @@
+//Navbar, Scroller, Search-box, Background-Carousel
+//Navbar
+.navbar {
+    color: #f8f9fa;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-flow: inherit;
+}
+
+//Scroller
+@media (max-width: 991.98px) {
+    .offcanvas-collapse {
+      position: fixed;
+      top: 56px; /* Height of navbar */
+      bottom: 0;
+      left: 100%;
+      width: 100%;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      overflow-y: auto;
+      visibility: hidden;
+      background-color: #343a40;
+      transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+      transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+      transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+    }
+    .offcanvas-collapse.open {
+      visibility: visible;
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+  }
+  
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+  
+  .nav-scroller .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    color: rgba(255, 255, 255, .75);
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .nav-underline .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+    color: #f8f9fa;
+  }
+  
+  .nav-underline .nav-link:hover {
+    color: #28a745;
+  }
+  
+  .nav-underline .active {
+    font-weight: 500;
+    color: #28a745;
+  }
+
+
+//Background-Carousel
+.carousel-indicators {
+    right: 0;
+    left: auto;
+    top: 20vh;
+    left: 3rem;
+    height: 50vh;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    &:before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: visible;
+        background-size: cover;
+        background-image: linear-gradient(to top, #000000 35%, rgba(255,0,0,0));
+        scroll-behavior: smooth;
+        /*-webkit-filter: blur(2px);
+        -moz-filter: blur(2px);*/
+    }
+
+    & .left {
+        text-align: start;
+        top: 35vh;
+        left: 1rem;
+        height: 50vh;
+    }
+}
+
+//Search-box
+.search-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  & .search {
+    width: 250px;
+    height: 40px;
+    background-color: rgba(245, 245, 245, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0px 20px;
+  
+    & input {
+      width: 100%;
+      height: 30px;
+      border: none;
+      outline: none;
+      margin: 0 0.3rem;
+      background-color: transparent;
+    }
+  
+    & button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    & button i {
+      color: #3a3a3a;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+
+
+  
+
+//Slideshows, Recent, Discover, Popular, Year Of Release
+.slideshows {
+  margin: 2rem 1rem;
+
+  & .content-container .title-small {
+    font-size: 1.3rem;
+    color: #f8f9fa;
+  }
+
+  & .content-container .title-large {
+    color: #f8f9fa;
+  }
+
+  //Recent
+  & .content-container .carousel-container .recent-content  a img{
+    border-radius: 0.3rem;
+  }
+
+  //Discover
+  & .content-container .carousel-container .discover-content  a img{
+    border-radius: 1rem;
+  }
+
+  //Popular
+  & .content-container .carousel-container .popular-content  a img{
+    border-radius: 0.3rem;
+  }
+
+  //Year Of Release
+  
+  & .content-container .carousel-container .yor-content  a {
+    color: #f8f9fa;
+    text-decoration: none;
+
+    &:hover {
+      color: #28a745;
+      text-decoration: none;
+    }
+  }
+  
+  & .content-container .carousel-container .yor-content  a img{
+    border-radius: 0.3rem;
+  }
+
+}
+
+  
+         
